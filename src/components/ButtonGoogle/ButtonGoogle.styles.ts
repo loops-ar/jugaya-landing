@@ -6,5 +6,7 @@ export const StyledButtonGoogle = styled("img", {
   height: 45,
   "@bp1": {
     cursor: "pointer",
+    width: "100%",
+    height: "100%",
   },
 });

@@ -5,6 +5,10 @@ export const StyledMainSection = styled("div", {
   padding: "28px 50px",
   "@bp1": {
     padding: "28px 100px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
@@ -142,5 +146,14 @@ export const StyledContainerButtonImg = styled("div", {
   },
   "@bp1": {
     display: "none",
+  },
+});
+
+export const StyledButtonSection = styled("img", {
+  display: "none",
+  "@bp1": {
+    display: "block",
+    cursor: "pointer",
+    marginTop: "24px",
   },
 });

@@ -3,6 +3,7 @@ import Button from "../Button/Button";
 import ButtonGoogle from "../ButtonGoogle/ButtonGoogle";
 import {
   StyledBody,
+  StyledButtonSection,
   StyledContainerButton,
   StyledContainerButtonImg,
   StyledContainerDescription,
@@ -59,6 +60,7 @@ const MainSection = () => {
           </StyledContainerButtonImg>
         </StyledContainerImg>
       </StyledBody>
+      <StyledButtonSection src="/img/scroll-icon.svg" alt="scroll" />
     </StyledMainSection>
   );
 };
