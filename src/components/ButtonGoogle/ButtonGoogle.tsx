@@ -2,11 +2,10 @@ import React, { FC } from "react";
 import { StyledButtonGoogle } from "./ButtonGoogle.styles";
 
 interface ButtonGoogleProps {
-  text: string;
   onClick: () => void;
 }
 
-const ButtonGoogle: FC<ButtonGoogleProps> = ({ text, onClick }) => {
+const ButtonGoogle: FC<ButtonGoogleProps> = ({onClick }) => {
   return <StyledButtonGoogle src="/img/playstore.png" alt="button-playstore" onClick={onClick} />;
 };
 

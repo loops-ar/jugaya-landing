@@ -2,12 +2,12 @@ import React, { FC } from "react";
 import { StyledButton } from "./Button.styles";
 
 interface ButtonProps {
-  text: string;
   onClick: () => void;
+  children: string;
 }
 
-const Button: FC<ButtonProps> = ({ text, onClick }) => {
-  return <StyledButton onClick={onClick}>{text}</StyledButton>;
+const Button: FC<ButtonProps> = ({ children, onClick }) => {
+  return <StyledButton onClick={onClick}>{children}</StyledButton>;
 };
 
 export default Button;
