@@ -10,6 +10,7 @@ import {
   StyledContainerImg,
   StyledContainerLinks,
   StyledDescription,
+  StyledFooter,
   StyledHeader,
   StyledImg,
   StyledLink,
@@ -60,7 +61,9 @@ const MainSection = () => {
           </StyledContainerButtonImg>
         </StyledContainerImg>
       </StyledBody>
-      <StyledButtonSection src="/img/scroll-icon.svg" alt="scroll" />
+      <StyledFooter>
+        <StyledButtonSection src="/img/scroll-icon.svg" alt="scroll" />
+      </StyledFooter>
     </StyledMainSection>
   );
 };

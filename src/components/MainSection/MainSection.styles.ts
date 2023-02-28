@@ -7,8 +7,6 @@ export const StyledMainSection = styled("div", {
     padding: "28px 100px",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
   },
 });
 
@@ -66,6 +64,7 @@ export const StyledContainerDescription = styled("div", {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "flex-start",
+    marginRight: "20px",
   },
 });
 
@@ -84,9 +83,10 @@ export const StyledTitleMain = styled("span", {
   marginTop: "24px",
   "@bp1": {
     fontWeight: 700,
-    fontSize: "76px",
+    fontSize: "68px",
     lineHeight: "84px",
     marginBottom: "60px",
+    textAlign: "left",
   },
 });
 
@@ -108,6 +108,7 @@ export const StyledDescription = styled("span", {
     fontSize: "14px",
     lineHeight: "20px",
     display: "block",
+    marginRight: "20px",
   },
 });
 
@@ -115,8 +116,7 @@ export const StyledImg = styled("img", {
   width: 280,
   objectFit: "contain",
   "@bp1": {
-    width: "582px",
-    height: "696px",
+    width: "480px",
     objectFit: "contain",
   },
 });
@@ -149,11 +149,19 @@ export const StyledContainerButtonImg = styled("div", {
   },
 });
 
+export const StyledFooter = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+});
+
 export const StyledButtonSection = styled("img", {
   display: "none",
   "@bp1": {
-    display: "block",
     cursor: "pointer",
-    marginTop: "24px",
+    display: "block",
+    width: 14,
+    objectFit: "contain",
   },
 });

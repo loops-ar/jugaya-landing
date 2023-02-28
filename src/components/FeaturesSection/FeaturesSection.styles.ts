@@ -55,5 +55,7 @@ export const StyledButtonSection = styled("img", {
   "@bp1": {
     display: "block",
     cursor: "pointer",
+    width: 14,  
+    objectFit: "contain",
   },
 });
