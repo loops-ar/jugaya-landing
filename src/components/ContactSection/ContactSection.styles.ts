@@ -9,11 +9,15 @@ export const StyledContactSection = styled("div", {
 });
 
 export const StyledSpan = styled("span", {
-  fontWeight: 500,
-  fontSize: "16px",
-  lineHeight: "22px",
+  textAlign: "center",
+  margin: "56px 0 46px 0",
   color: "$white",
-  margin:"56px 0 46px 0",
+  padding:"0 50px",
+  "@bp1": {
+    fontWeight: 500,
+    fontSize: "16px",
+    lineHeight: "22px",
+  },
 });
 
 export const StyledImage = styled("img", {});
