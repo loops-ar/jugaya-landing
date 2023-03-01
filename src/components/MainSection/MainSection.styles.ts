@@ -65,6 +65,7 @@ export const StyledContainerDescription = styled("div", {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "flex-start",
+    width: "40%",
   },
 });
 
