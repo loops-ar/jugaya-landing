@@ -22,13 +22,13 @@ import {
 
 const MainSection = () => {
   return (
-    <StyledMainSection>
+    <StyledMainSection id="main">
       <StyledHeader>
         <StyledLogo src="/img/logo-black.svg"></StyledLogo>
         <StyledContainerLinks>
           <StyledLink href="#main">Inicio</StyledLink>
-          <StyledLink href="#contact">Contacto</StyledLink>
           <StyledLink href="#features">Características</StyledLink>
+          <StyledLink href="#contact">Contacto</StyledLink>
         </StyledContainerLinks>
       </StyledHeader>
       <StyledBody>

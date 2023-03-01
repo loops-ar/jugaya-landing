@@ -12,7 +12,7 @@ import {
 
 const FeaturesSection = () => {
   return (
-    <StyledFeaturesSection>
+    <StyledFeaturesSection id="features">
       <Title>Características</Title>
       <StyledFeaturesAndImageContainer>
         <StyledFeaturesLeftContainer>
