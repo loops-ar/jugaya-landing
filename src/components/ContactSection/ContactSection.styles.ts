@@ -5,7 +5,7 @@ export const StyledContactSection = styled("div", {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  padding: "0 0 36px 0",
+  padding: "36px 0",
 });
 
 export const StyledSpan = styled("span", {

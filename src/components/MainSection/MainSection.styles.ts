@@ -2,11 +2,12 @@ import { styled } from "../../theme/theme";
 
 export const StyledMainSection = styled("div", {
   background: "linear-gradient(180deg, #FFFFFF 12.54%, #F0F0F0 100%)",
-  padding: "28px 50px",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  padding: "36px 50px",
   "@bp1": {
-    padding: "28px 100px",
-    display: "flex",
-    flexDirection: "column",
+    padding: "36px 0",
   },
 });
 
@@ -64,7 +65,6 @@ export const StyledContainerDescription = styled("div", {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "flex-start",
-    marginRight: "20px",
   },
 });
 

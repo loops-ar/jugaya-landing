@@ -8,7 +8,7 @@ export const StyledFeaturesSection = styled("div", {
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  padding: "46px 0",
+  padding: "36px 0",
 });
 
 export const StyledFeaturesAndImageContainer = styled("div", {
