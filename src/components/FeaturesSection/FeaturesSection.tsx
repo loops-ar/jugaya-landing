@@ -51,7 +51,13 @@ const FeaturesSection = () => {
           />
         </StyledFeaturesRightContainer>
       </StyledFeaturesAndImageContainer>
-      <StyledButtonSection src="/img/scroll-icon.svg" alt="scroll"/>
+      <StyledButtonSection
+        onClick={() => {
+          window.location.href = "#contact";
+        }}
+        src="/img/scroll-icon.svg"
+        alt="scroll"
+      />
     </StyledFeaturesSection>
   );
 };

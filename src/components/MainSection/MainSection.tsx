@@ -45,24 +45,48 @@ const MainSection = () => {
             características únicas y un equipo de soporte dedicado.
           </StyledDescription>
           <StyledContainerButton>
-            <Button onClick={() => console.log("click")}>
+            <Button
+              onClick={() => {
+                window.location.href = "https://jugaya.ar/";
+              }}
+            >
               {"VERSION WEB"}
             </Button>
-            <ButtonGoogle onClick={() => console.log("click")}></ButtonGoogle>
+            <ButtonGoogle
+              onClick={() => {
+                window.location.href =
+                  "https://play.google.com/store/apps/details?id=ar.jugaya.twa";
+              }}
+            ></ButtonGoogle>
           </StyledContainerButton>
         </StyledContainerDescription>
         <StyledContainerImg>
           <StyledImg src="/img/phone-1.png"></StyledImg>
           <StyledContainerButtonImg>
-            <Button onClick={() => console.log("click")}>
+            <Button
+              onClick={() => {
+                window.location.href = "https://jugaya.ar/";
+              }}
+            >
               {"VERSION WEB"}
             </Button>
-            <ButtonGoogle onClick={() => console.log("click")}></ButtonGoogle>
+            <ButtonGoogle
+              onClick={() => {
+                window.location.href =
+                  "https://play.google.com/store/apps/details?id=ar.jugaya.twa";
+              }}
+            ></ButtonGoogle>
           </StyledContainerButtonImg>
         </StyledContainerImg>
       </StyledBody>
       <StyledFooter>
-        <StyledButtonSection src="/img/scroll-icon.svg" alt="scroll" />
+        <StyledButtonSection
+          onClick={() => {
+            window.location.href = "#features";
+          }}
+          src="/img/scroll-icon.svg"
+          alt="scroll"
+        />
       </StyledFooter>
     </StyledMainSection>
   );
