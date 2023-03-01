@@ -20,4 +20,16 @@ export const StyledSpan = styled("span", {
   },
 });
 
-export const StyledImage = styled("img", {});
+export const StyledImage = styled("img", {
+  width: "84px",
+  objectFit: "contain",
+});
+
+export const StyledContainerContact = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  "@bp1": {
+    justifyContent: "center",
+  },
+});
