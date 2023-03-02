@@ -5,7 +5,7 @@ export const StyledMainSection = styled("div", {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  padding: "36px 50px",
+  padding: "36px 0",
   "@bp1": {
     padding: "36px 0",
   },
@@ -65,8 +65,11 @@ export const StyledContainerDescription = styled("div", {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "flex-start",
-    width: "40%",
+    maxWidth: 400,
   },
+  "@bp2": {
+    maxWidth: 600,
+  }
 });
 
 export const StyledContainerImg = styled("div", {
@@ -77,18 +80,24 @@ export const StyledContainerImg = styled("div", {
 });
 
 export const StyledTitleMain = styled("span", {
-  fontWeight: 700,
+  fontWeight: 800,
   fontSize: "38px",
   lineHeight: "48px",
   textAlign: "center",
   marginTop: "24px",
   "@bp1": {
-    fontWeight: 700,
-    fontSize: "68px",
-    lineHeight: "84px",
-    marginBottom: "60px",
+    fontSize: "50px",
+    lineHeight: "58px",
     textAlign: "left",
+    marginBottom: "36px",
   },
+  "@bp2": {
+    fontSize: "80px",
+    lineHeight: "88px",
+    textAlign: "left",
+    marginBottom: "60px"
+  },
+  
 });
 
 export const StyledTitleSecondary = styled("span", {
@@ -117,8 +126,11 @@ export const StyledImg = styled("img", {
   width: 280,
   objectFit: "contain",
   "@bp1": {
-    width: "480px",
+    width: "340px",
     objectFit: "contain",
+  },
+  "@bp2": {
+    width: "480px",
   },
 });
 

@@ -48,14 +48,25 @@ export const StyledFeaturesRightContainer = styled("div", {
   },
 });
 
-export const StyledFeatureImage = styled("img", {});
+export const StyledFeatureImage = styled("img", {
+  width: "100%",
+  maxWidth: 408,
+  "@bp1": {
+    width: 330,
+    margin: "0 -32px",
+  },
+  "@bp2": {
+    width: 408,
+    margin: 0,
+  },
+});
 
 export const StyledButtonSection = styled("img", {
   display: "none",
   "@bp1": {
     display: "block",
     cursor: "pointer",
-    width: 14,  
+    width: 14,
     objectFit: "contain",
   },
 });

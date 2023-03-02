@@ -17,8 +17,11 @@ export const StyledTitle = styled("span", {
   },
   "@bp1": {
     fontWeight: 700,
-    fontSize: "64px",
+    fontSize: "48px",
     lineHeight: "87px",
     textAlign: "center",
+  },
+  "@bp2": {
+    fontSize: "64px",
   },
 });

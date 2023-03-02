@@ -12,11 +12,14 @@ export const StyledSpan = styled("span", {
   textAlign: "center",
   margin: "56px 0 46px 0",
   color: "$white",
-  padding:"0 50px",
+  padding: "0 50px",
   "@bp1": {
     fontWeight: 500,
     fontSize: "16px",
     lineHeight: "22px",
+  },
+  a: {
+    color: "$white",
   },
 });
 

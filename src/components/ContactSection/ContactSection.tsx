@@ -16,16 +16,20 @@ const ContactSection = () => {
         <Title color="white">Contactanos</Title>
         <StyledSpan>
           Si te interesa añadir tu club a JugaYa completá el formulario de
-          inscripción y nos pondremos en contacto{" "}
+          inscripción y nos pondremos en contacto.
         </StyledSpan>
         <StyledContainerContact>
-          <Button onClick={() => console.log("click")}>
+          <Button
+            onClick={() =>
+              (window.location.href = "https://forms.gle/7CbXL62LcNQ28v8U9")
+            }
+          >
             FORMULARIO DE INSCRIPCIÓN
           </Button>
         </StyledContainerContact>
         <StyledSpan>
-          Si tenes alguna duda comunicate con nosotros por mail a
-          contacto@jugaya.ar.
+          Si tenes alguna duda comunicate con nosotros por mail a{" "}
+          <a href="mailto:contacto@jugaya.ar">contacto@jugaya.ar</a>.
         </StyledSpan>
         <StyledContainerContact>
           <StyledImage src="/img/logo-white.svg"></StyledImage>
