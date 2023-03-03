@@ -39,7 +39,7 @@ const MainSection = () => {
               La mejor app para gestionar tus canchas
             </StyledTitleMain>
             <StyledTitleSecondary>
-              Gestiona las reservas de tu club sin preocupaciones
+              Gestioná las reservas de tu club sin preocupaciones
             </StyledTitleSecondary>
             <StyledDescription>
               Te ofrecemos una herramienta completa para que puedas administrar

@@ -40,7 +40,7 @@ const FeaturesSection = () => {
             <FeatureItem
               title="Flexibilidad"
               align="left"
-              description="Habilitá o deshabilita horarios y creá reservas recurrentes"
+              description="Habilitá o deshabilitá horarios y creá reservas recurrentes"
             />
             <FeatureItem
               title="Seguridad"
