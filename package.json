@@ -1,5 +1,6 @@
 {
   "name": "jugaya-landing",
+  "homepage": "https://clubes.jugaya.ar",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
