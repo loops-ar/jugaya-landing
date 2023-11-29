@@ -83,7 +83,6 @@ const Calculator = () => {
 
   const calcularPrecioXTurno = (deporte: string): number | undefined => {
     const parsedCanchas = parseInt(canchas);
-    const parsedTurnos = parseInt(turnos);
 
     if (parsedCanchas >= 1 && parsedCanchas <= 3) {
       if (duracion === "1 hora") {
