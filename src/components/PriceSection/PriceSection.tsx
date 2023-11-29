@@ -25,7 +25,9 @@ const PriceSection = () => {
       <StyledPriceSectionCalculatorContainer>
         <Calculator></Calculator>
       </StyledPriceSectionCalculatorContainer>
-      <Button onClick={() => console.log("click")}>COMENZA LA PRUEBA GRATUITA</Button>
+      <Button onClick={() => console.log("click")}>
+        COMENZA LA PRUEBA GRATUITA
+      </Button>
     </StyledPriceSection>
   );
 };
