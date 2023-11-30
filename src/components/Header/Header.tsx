@@ -6,7 +6,6 @@ import {
   StyledLogo,
 } from "./Header.styles";
 import { useNavigate } from "react-router";
-import Sidebar from "../Sidebar/Sidebar";
 
 const Header = () => {
   const navigate = useNavigate();
