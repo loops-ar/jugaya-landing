@@ -11,37 +11,6 @@ export const StyledMainSection = styled("div", {
   },
 });
 
-export const StyledHeader = styled("div", {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  "@bp1": {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-});
-
-export const StyledContainerLinks = styled("div", {});
-
-export const StyledLink = styled("a", {
-  display: "none",
-  "@bp1": {
-    color: "$dark",
-    textDecoration: "none",
-    fontSize: 16,
-    fontWeight: "700",
-    lineHeight: "22px",
-    marginLeft: "54px",
-    display: "inline-block",
-  },
-  "&:hover": {
-    color: "$primary",
-  },
-});
-
-export const StyledLogo = styled("img", {});
-
 export const StyledBody = styled("div", {
   display: "flex",
   flexDirection: "column",
