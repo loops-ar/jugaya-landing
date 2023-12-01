@@ -1,7 +1,5 @@
-import React from "react";
-import HomePage from "./pages/HomePage";
-import { routes } from "./pages/routes";
 import { Route, Routes } from "react-router-dom";
+import { routes } from "./pages/routes";
 
 function App() {
   return <div>

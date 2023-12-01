@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <>
       <StyledHeader>
-        <img src="/img/logo-black.svg"></img>
+        <img src="/img/logo-black.svg" alt="logo"></img>
         <StyledContainerLinks>
           <StyledLink onClick={() => navigate("/")}>Inicio</StyledLink>
           {window.location.pathname === "/" ? (
@@ -28,7 +28,7 @@ const Header = () => {
         </StyledContainerLinks>
       </StyledHeader>
       <StyledSidebarContainer>
-        <img src="/img/logo-black.svg"></img>
+        <img src="/img/logo-black.svg" alt="logo"></img>
         <Sidebar></Sidebar>
       </StyledSidebarContainer>
     </>
