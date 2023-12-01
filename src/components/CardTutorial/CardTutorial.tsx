@@ -11,11 +11,12 @@ interface CardTutorialProps {
   userType?: "admin" | "user";
   title?: string;
   items?: string[];
+  onClick?: () => void;
 }
 
-const CardTutorial: FC<CardTutorialProps> = ({ userType, title, items }) => {
+const CardTutorial: FC<CardTutorialProps> = ({ userType, title, items, onClick }) => {
   return (
-    <StyledCardTutorial>
+    <StyledCardTutorial onClick={onClick}>
       <StyledCardTitle>{title}</StyledCardTitle>
       <StyledCardUserType userType={userType}>{userType === "admin" ? "Administrador" : "Todos los usuarios"}</StyledCardUserType>
 

@@ -14,26 +14,39 @@ const Sidebar = () => {
 
   return (
     <StyledSidebar>
-      <StyledSidebarIcon onClick={() => setIsOpen(!isOpen)}>asd</StyledSidebarIcon>
+      <StyledSidebarIcon
+        src="lista.svg"
+        onClick={() => setIsOpen(!isOpen)}
+      ></StyledSidebarIcon>
       <StyledSidebarMenuContainer isOpen={isOpen}>
         <StyledSidebarMenuButton onClick={() => navigate("/")}>
           Inicio
         </StyledSidebarMenuButton>
-        <StyledSidebarMenuButton onClick={() => navigate("/catalogo")}>
-          Elegí tu aventura
+        <StyledSidebarMenuButton
+          onClick={() => {
+            navigate("/tutorial");
+          }}
+        >
+          Tutorial
         </StyledSidebarMenuButton>
-        {
-          window.location.pathname === "/" ? (
-            <>
-              <StyledSidebarMenuButtonLink as="a" href="#testimonios">
-                Testimonios
-              </StyledSidebarMenuButtonLink>
-              <StyledSidebarMenuButtonLink as="a" href="#contacto">
-                Contactos
-              </StyledSidebarMenuButtonLink>
-            </>
-          ) : null
-        }
+        {window.location.pathname === "/" ? (
+          <>
+            <StyledSidebarMenuButtonLink
+              as="a"
+              href="#features"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              Características
+            </StyledSidebarMenuButtonLink>
+          </>
+        ) : null}
+        <StyledSidebarMenuButtonLink
+          as="a"
+          href="#contact"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          Contactos
+        </StyledSidebarMenuButtonLink>
       </StyledSidebarMenuContainer>
     </StyledSidebar>
   );

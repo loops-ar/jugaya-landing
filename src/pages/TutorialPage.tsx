@@ -1,22 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header/Header";
 import TutorialLayout from "../components/TutorialLayout/TutorialLayout";
 import Container from "../components/Container/Container";
 import Title from "../components/Title/Title";
 import CardTutorial from "../components/CardTutorial/CardTutorial";
+import ContactSection from "../components/ContactSection/ContactSection";
 
 const TutorialPage = () => {
   return (
     <TutorialLayout>
       <Container>
-      <TutorialLayout.Header>
-        <Header />
-      </TutorialLayout.Header>
+        <TutorialLayout.Header>
+          <Header />
+        </TutorialLayout.Header>
         <TutorialLayout.Title>
           <Title>Tutorial</Title>
         </TutorialLayout.Title>
         <TutorialLayout.CardContainer>
           <CardTutorial
+            onClick={() => console.log("click")}
             title="Crear y modificar turnos"
             userType="admin"
             items={[
@@ -26,7 +28,8 @@ const TutorialPage = () => {
               "Usar el calendario de turnos",
             ]}
           />
-           <CardTutorial
+          <CardTutorial
+            onClick={() => console.log("click")}
             title="Aceptar o rechazar turnos"
             userType="admin"
             items={[
@@ -35,7 +38,8 @@ const TutorialPage = () => {
               "Ver datos de contacto los jugadores",
             ]}
           />
-           <CardTutorial
+          <CardTutorial
+            onClick={() => console.log("click")}
             title="Modificar tu datos"
             userType="user"
             items={[
@@ -45,7 +49,8 @@ const TutorialPage = () => {
               "Habilitar o deshabilitar las notificaciones",
             ]}
           />
-           <CardTutorial
+          <CardTutorial
+            onClick={() => console.log("click")}
             title="Reservar turnos"
             userType="user"
             items={[
@@ -56,6 +61,8 @@ const TutorialPage = () => {
             ]}
           />
         </TutorialLayout.CardContainer>
+
+        <ContactSection></ContactSection>
       </Container>
     </TutorialLayout>
   );

@@ -15,11 +15,19 @@ export const StyledTutorialLayoutHeader = styled("div", {
 
 export const StyledTutorialLayoutTitle = styled("div", {
   marginTop: "24px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  "@bp1":{
+    justifyContent: "flex-start",
+    marginLeft: "24px",
+  }
 });
 
 export const StyledTutorialLayoutCardContainer = styled("div", {
   display: "flex",
   flexDirection: "column",
+  alignItems: "center",
   gap: "24px",
   margin: "24px 0",
   "@bp1": {
