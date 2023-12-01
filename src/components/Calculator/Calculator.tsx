@@ -26,19 +26,19 @@ const valorPorDeporte: ValorPorDeporte = {
     "2 horas": 80,
   },
   "Futbol 5": {
-    "1 hora": 100,
-    "1:30 horas": 150,
-    "2 horas": 200,
+    "1 hora": 80,
+    "1:30 horas": 120,
+    "2 horas": 160,
   },
   "Futbol 7": {
-    "1 hora": 150,
-    "1:30 horas": 225,
-    "2 horas": 300,
+    "1 hora": 75,
+    "1:30 horas": 110,
+    "2 horas": 150,
   },
   "Futbol 11": {
-    "1 hora": 200,
-    "1:30 horas": 300,
-    "2 horas": 400,
+    "1 hora": 70,
+    "1:30 horas": 105,
+    "2 horas": 140,
   },
 };
 
@@ -48,7 +48,6 @@ const Calculator = () => {
   const [canchas, setCanchas] = React.useState("1");
   const [turnos, setTurnos] = React.useState("1");
 
-  // Usar el tipo ValorPorDeporte en la función calcularPrecio
   const calcularPrecio = (deporte: string): number | undefined => {
     const parsedCanchas = parseInt(canchas);
     const parsedTurnos = parseInt(turnos);
