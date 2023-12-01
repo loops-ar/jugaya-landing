@@ -61,9 +61,8 @@ const TutorialPage = () => {
             ]}
           />
         </TutorialLayout.CardContainer>
-
-        <ContactSection></ContactSection>
       </Container>
+      <ContactSection></ContactSection>
     </TutorialLayout>
   );
 };
