@@ -15,9 +15,14 @@ export const StyledCalculatorTitle = styled("h1", {
 });
 
 export const StyledCalculatorInputContainer = styled("div", {
-    display:"grid",
-    gridTemplateColumns:"1fr 1fr",
+    display:"flex",
+    flexDirection:"column",
     gap:"24px",
+    "@bp1":{
+        display:"grid",
+        gridTemplateColumns:"1fr 1fr",
+        gap:"24px",
+    }
 });
 
 export const StyledCalculatorPriceContainer = styled("div", {
