@@ -26,6 +26,35 @@ const TutorialPage = () => {
               "Usar el calendario de turnos",
             ]}
           />
+           <CardTutorial
+            title="Aceptar o rechazar turnos"
+            userType="admin"
+            items={[
+              "Encontrar los turnos pendientes",
+              "Aceptar o rechazar turnos",
+              "Ver datos de contacto los jugadores",
+            ]}
+          />
+           <CardTutorial
+            title="Modificar tu datos"
+            userType="user"
+            items={[
+              "Configurar tu nombre",
+              "Configurar tu numero de teléfono",
+              "Ver datos de contacto los jugadores",
+              "Habilitar o deshabilitar las notificaciones",
+            ]}
+          />
+           <CardTutorial
+            title="Reservar turnos"
+            userType="user"
+            items={[
+              "Crear tu cuenta en JugaYa",
+              "Buscar clubes por ciudad/deporte",
+              "Reservar turnos",
+              "Ver estado de las reservas",
+            ]}
+          />
         </TutorialLayout.CardContainer>
       </Container>
     </TutorialLayout>

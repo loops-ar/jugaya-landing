@@ -3,10 +3,12 @@ import { styled } from "../../theme/theme";
 export const StyledCardTutorial = styled("div", {
   display: "flex",
   flexDirection: "column",
-  padding: "16px 80px 16px 16px",
+  padding: "16px",
+  width: "328px",
   borderRadius: "28px",
   backgroundColor: "$white",
   boxShadow: "0px 4px 16px rgba(0, 0, 0, 0.08)",
+  cursor: "pointer",
 });
 
 export const StyledCardTitle = styled("h1", {

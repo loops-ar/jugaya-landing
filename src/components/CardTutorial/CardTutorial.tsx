@@ -17,7 +17,7 @@ const CardTutorial: FC<CardTutorialProps> = ({ userType, title, items }) => {
   return (
     <StyledCardTutorial>
       <StyledCardTitle>{title}</StyledCardTitle>
-      <StyledCardUserType userType={userType}>{userType}</StyledCardUserType>
+      <StyledCardUserType userType={userType}>{userType === "admin" ? "Administrador" : "Todos los usuarios"}</StyledCardUserType>
 
       <StyledCardDescriptionTitle>Aprende a:</StyledCardDescriptionTitle>
       {items?.map((item, index) => (
