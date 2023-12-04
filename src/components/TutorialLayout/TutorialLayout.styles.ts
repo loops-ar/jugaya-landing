@@ -41,3 +41,11 @@ export const StyledTutorialLayoutCardContainer = styled("div", {
     gap: "24px",
   },
 });
+
+export const StyledTutorialLayoutContact = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-start",
+  gap: "24px",
+  margin: "36px 0 48px 0",
+});

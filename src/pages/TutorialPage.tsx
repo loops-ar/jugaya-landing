@@ -5,6 +5,7 @@ import Container from "../components/Container/Container";
 import Title from "../components/Title/Title";
 import CardTutorial from "../components/CardTutorial/CardTutorial";
 import ContactSection from "../components/ContactSection/ContactSection";
+import Description from "../components/Description/Description";
 
 const TutorialPage = () => {
   return (
@@ -61,6 +62,25 @@ const TutorialPage = () => {
             ]}
           />
         </TutorialLayout.CardContainer>
+        <TutorialLayout.Contact>
+          <Description size="medium">
+            <b>¿Necesitas ayuda con otro tema?</b>
+          </Description>
+          <Description size="small">
+            Comunicate con nuestro equipo de soporte por{" "}
+            <a
+              href="https://api.whatsapp.com/send?phone=5493585754749"
+              style={{
+                textDecoration: "none",
+                color: "#91C301",
+                marginRight: "4px",                
+              }}
+            >
+              Whatsapp
+            </a>
+            (+5493585754749)
+          </Description>
+        </TutorialLayout.Contact>
       </Container>
       <ContactSection></ContactSection>
     </TutorialLayout>
