@@ -11,7 +11,7 @@ import Button from "../Button/Button";
 
 const PriceSection = () => {
   return (
-    <StyledPriceSection>
+    <StyledPriceSection id="price">
       <StyledPriceSectionText>
         <Title>Precios</Title>
         <Description size="small">

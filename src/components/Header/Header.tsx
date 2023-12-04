@@ -19,6 +19,7 @@ const Header = () => {
           {window.location.pathname === "/" ? (
             <>
               <StyledLink href="#features">Características</StyledLink>
+              <StyledLink href="#price">Precios</StyledLink>
             </>
           ) : null}
           <StyledLink onClick={() => navigate("/tutorial")}>
