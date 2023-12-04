@@ -2,6 +2,7 @@ import { FC } from "react";
 import {
   StyledCardDescriptionItem,
   StyledCardDescriptionTitle,
+  StyledCardFondo,
   StyledCardTitle,
   StyledCardTutorial,
   StyledCardUserType,
@@ -14,11 +15,18 @@ interface CardTutorialProps {
   onClick?: () => void;
 }
 
-const CardTutorial: FC<CardTutorialProps> = ({ userType, title, items, onClick }) => {
+const CardTutorial: FC<CardTutorialProps> = ({
+  userType,
+  title,
+  items,
+  onClick,
+}) => {
   return (
     <StyledCardTutorial onClick={onClick}>
       <StyledCardTitle>{title}</StyledCardTitle>
-      <StyledCardUserType userType={userType}>{userType === "admin" ? "Administrador" : "Todos los usuarios"}</StyledCardUserType>
+      <StyledCardUserType userType={userType}>
+        {userType === "admin" ? "Administrador" : "Todos los usuarios"}
+      </StyledCardUserType>
 
       <StyledCardDescriptionTitle>Aprende a:</StyledCardDescriptionTitle>
       {items?.map((item, index) => (
@@ -26,6 +34,7 @@ const CardTutorial: FC<CardTutorialProps> = ({ userType, title, items, onClick }
           {item}
         </StyledCardDescriptionItem>
       ))}
+      <StyledCardFondo src="/img/fondo-card.png"></StyledCardFondo>
     </StyledCardTutorial>
   );
 };
