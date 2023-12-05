@@ -52,7 +52,7 @@ const Calculator = () => {
     const parsedCanchas = parseInt(canchas);
     const parsedTurnos = parseInt(turnos);
 
-    if (parsedCanchas >= 1 && parsedCanchas <= 3) {
+    if (parsedCanchas >= 1 && parsedCanchas <= 3 && parsedTurnos) {
       if (duracion === "1 hora") {
         return valorPorDeporte[deporte]["1 hora"] * parsedTurnos;
       } else if (duracion === "1:30 horas") {
@@ -60,7 +60,7 @@ const Calculator = () => {
       } else if (duracion === "2 horas") {
         return valorPorDeporte[deporte]["2 horas"] * parsedTurnos;
       }
-    } else if (parsedCanchas >= 4 && parsedCanchas <= 6) {
+    } else if (parsedCanchas >= 4 && parsedCanchas <= 6 && parsedTurnos) {
       if (duracion === "1 hora") {
         return valorPorDeporte[deporte]["1 hora"] * parsedTurnos * 0.8;
       } else if (duracion === "1:30 horas") {
@@ -68,7 +68,7 @@ const Calculator = () => {
       } else if (duracion === "2 horas") {
         return valorPorDeporte[deporte]["2 horas"] * parsedTurnos * 0.8;
       }
-    } else if (parsedCanchas >= 7) {
+    } else if (parsedCanchas >= 7 && parsedTurnos) {
       if (duracion === "1 hora") {
         return valorPorDeporte[deporte]["1 hora"] * parsedTurnos * 0.6;
       } else if (duracion === "1:30 horas") {
@@ -82,8 +82,9 @@ const Calculator = () => {
 
   const calcularPrecioXTurno = (deporte: string): number | undefined => {
     const parsedCanchas = parseInt(canchas);
+    const parsedTurnos = parseInt(turnos);
 
-    if (parsedCanchas >= 1 && parsedCanchas <= 3) {
+    if (parsedCanchas >= 1 && parsedCanchas <= 3 && parsedTurnos) {
       if (duracion === "1 hora") {
         return valorPorDeporte[deporte]["1 hora"];
       } else if (duracion === "1:30 horas") {
@@ -91,7 +92,7 @@ const Calculator = () => {
       } else if (duracion === "2 horas") {
         return valorPorDeporte[deporte]["2 horas"];
       }
-    } else if (parsedCanchas >= 4 && parsedCanchas <= 6) {
+    } else if (parsedCanchas >= 4 && parsedCanchas <= 6 && parsedTurnos) {
       if (duracion === "1 hora") {
         return valorPorDeporte[deporte]["1 hora"] * 0.8;
       } else if (duracion === "1:30 horas") {
@@ -99,7 +100,7 @@ const Calculator = () => {
       } else if (duracion === "2 horas") {
         return valorPorDeporte[deporte]["2 horas"] * 0.8;
       }
-    } else if (parsedCanchas >= 7) {
+    } else if (parsedCanchas >= 7 && parsedTurnos) {
       if (duracion === "1 hora") {
         return valorPorDeporte[deporte]["1 hora"] * 0.6;
       } else if (duracion === "1:30 horas") {
@@ -140,11 +141,16 @@ const Calculator = () => {
         ></Input>
       </StyledCalculatorInputContainer>
       <StyledCalculatorPriceContainer>
-        <StyledCalculatorPrice>{`$ ${calcularPrecio(
-          deporte
-        )} / Mes`}</StyledCalculatorPrice>
+        <StyledCalculatorPrice>
+          {
+            // si el precio es 0 no se muestra nada, sino se muestra el precio de eta forma $1000/mes
+            calcularPrecio(deporte) !== 0 &&
+              `$ ${calcularPrecio(deporte)} / Mes`
+          }
+        </StyledCalculatorPrice>
         <StyledCalculatorPriceXTurno>
-          {`$ ${calcularPrecioXTurno(deporte)} / Turno`}
+          {calcularPrecioXTurno(deporte) !== 0 &&
+            `$ ${calcularPrecioXTurno(deporte)} / Turno`}
         </StyledCalculatorPriceXTurno>
       </StyledCalculatorPriceContainer>
     </StyledCalculator>
