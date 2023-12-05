@@ -5,11 +5,14 @@ export const StyledCardTutorial = styled("div", {
   flexDirection: "column",
   padding: "16px",
   borderRadius: "28px",
-  minHeight: "224px",
+  minWidth: "320px",
   boxShadow: "0px 4px 16px rgba(0, 0, 0, 0.08)",
   cursor: "pointer",
   position: "relative",
   backdropFilter: "blur(4px)",
+  bp1: {
+    minHeight: "224px",
+  },
 });
 
 export const StyledCardFondo = styled("img", {
