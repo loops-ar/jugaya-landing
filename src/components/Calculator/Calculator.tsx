@@ -145,12 +145,12 @@ const Calculator = () => {
           {
             // si el precio es 0 no se muestra nada, sino se muestra el precio de eta forma $1000/mes
             calcularPrecio(deporte) !== 0 &&
-              `$ ${calcularPrecio(deporte)} / Mes`
+              `$ ${calcularPrecio(deporte)} / mes`
           }
         </StyledCalculatorPrice>
         <StyledCalculatorPriceXTurno>
           {calcularPrecioXTurno(deporte) !== 0 &&
-            `$ ${calcularPrecioXTurno(deporte)} / Turno`}
+            `$ ${calcularPrecioXTurno(deporte)} / turno`}
         </StyledCalculatorPriceXTurno>
       </StyledCalculatorPriceContainer>
     </StyledCalculator>
