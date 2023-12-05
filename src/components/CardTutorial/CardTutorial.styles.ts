@@ -10,7 +10,7 @@ export const StyledCardTutorial = styled("div", {
   cursor: "pointer",
   position: "relative",
   backdropFilter: "blur(4px)",
-  bp1: {
+  "@bp1": {
     minHeight: "224px",
   },
 });
