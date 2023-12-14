@@ -1,6 +1,12 @@
 import { styled } from "../../theme/theme";
 
+export const StyledCardLink = styled("a", {
+  textDecoration: "none",
+  color: "inherit",
+});
+
 export const StyledCardTutorial = styled("div", {
+  background: "$white",
   display: "flex",
   flexDirection: "column",
   padding: "16px",
@@ -9,20 +15,9 @@ export const StyledCardTutorial = styled("div", {
   boxShadow: "0px 4px 16px rgba(0, 0, 0, 0.08)",
   cursor: "pointer",
   position: "relative",
-  backdropFilter: "blur(4px)",
   "@bp1": {
     minHeight: "224px",
   },
-});
-
-export const StyledCardFondo = styled("img", {
-  position: "absolute",
-  bottom: "0",
-  right: "0",
-  height: "100%",
-  objectFit: "contain",
-  borderRadius: "28px",
-  zIndex: "-1",
 });
 
 export const StyledCardTitle = styled("h1", {

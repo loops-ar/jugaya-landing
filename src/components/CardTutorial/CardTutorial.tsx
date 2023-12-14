@@ -2,7 +2,7 @@ import { FC } from "react";
 import {
   StyledCardDescriptionItem,
   StyledCardDescriptionTitle,
-  StyledCardFondo,
+  StyledCardLink,
   StyledCardTitle,
   StyledCardTutorial,
   StyledCardUserType,
@@ -12,30 +12,31 @@ interface CardTutorialProps {
   userType?: "admin" | "user";
   title?: string;
   items?: string[];
-  onClick?: () => void;
+  link?: string;
 }
 
 const CardTutorial: FC<CardTutorialProps> = ({
   userType,
   title,
   items,
-  onClick,
+  link,
 }) => {
   return (
-    <StyledCardTutorial onClick={onClick}>
-      <StyledCardTitle>{title}</StyledCardTitle>
-      <StyledCardUserType userType={userType}>
-        {userType === "admin" ? "Administrador" : "Todos los usuarios"}
-      </StyledCardUserType>
+    <StyledCardLink href={link}>
+      <StyledCardTutorial>
+        <StyledCardTitle>{title}</StyledCardTitle>
+        <StyledCardUserType userType={userType}>
+          {userType === "admin" ? "Administrador" : "Todos los usuarios"}
+        </StyledCardUserType>
 
-      <StyledCardDescriptionTitle>Aprende a:</StyledCardDescriptionTitle>
-      {items?.map((item, index) => (
-        <StyledCardDescriptionItem key={index}>
-          {item}
-        </StyledCardDescriptionItem>
-      ))}
-      <StyledCardFondo src="/img/fondo-card.png"></StyledCardFondo>
-    </StyledCardTutorial>
+        <StyledCardDescriptionTitle>Aprende a:</StyledCardDescriptionTitle>
+        {items?.map((item, index) => (
+          <StyledCardDescriptionItem key={index}>
+            {item}
+          </StyledCardDescriptionItem>
+        ))}
+      </StyledCardTutorial>
+    </StyledCardLink>
   );
 };
 

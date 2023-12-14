@@ -19,39 +19,7 @@ const TutorialPage = () => {
         </TutorialLayout.Title>
         <TutorialLayout.CardContainer>
           <CardTutorial
-            onClick={() => console.log("click")}
-            title="Crear y modificar turnos"
-            userType="admin"
-            items={[
-              "Cargar turnos pedidos fuera de la App",
-              "Crear turnos fijos",
-              "Eliminar turnos existentes",
-              "Usar el calendario de turnos",
-            ]}
-          />
-          <CardTutorial
-            onClick={() => console.log("click")}
-            title="Aceptar o rechazar turnos"
-            userType="admin"
-            items={[
-              "Encontrar los turnos pendientes",
-              "Aceptar o rechazar turnos",
-              "Ver datos de contacto los jugadores",
-            ]}
-          />
-          <CardTutorial
-            onClick={() => console.log("click")}
-            title="Modificar tu datos"
-            userType="user"
-            items={[
-              "Configurar tu nombre",
-              "Configurar tu numero de teléfono",
-              "Ver datos de contacto los jugadores",
-              "Habilitar o deshabilitar las notificaciones",
-            ]}
-          />
-          <CardTutorial
-            onClick={() => console.log("click")}
+            link="https://www.youtube.com/watch?v=hrw7Yw31Aos"
             title="Reservar turnos"
             userType="user"
             items={[
@@ -61,6 +29,41 @@ const TutorialPage = () => {
               "Ver estado de las reservas",
             ]}
           />
+          {false && (
+            <>
+              <CardTutorial
+                link="#"
+                title="Crear y modificar turnos"
+                userType="admin"
+                items={[
+                  "Cargar turnos pedidos fuera de la App",
+                  "Crear turnos fijos",
+                  "Eliminar turnos existentes",
+                  "Usar el calendario de turnos",
+                ]}
+              />
+              <CardTutorial
+                link="#"
+                title="Aceptar o rechazar turnos"
+                userType="admin"
+                items={[
+                  "Encontrar los turnos pendientes",
+                  "Aceptar o rechazar turnos",
+                  "Ver datos de contacto los jugadores",
+                ]}
+              />
+              <CardTutorial
+                link="#"
+                title="Modificar tu datos"
+                userType="user"
+                items={[
+                  "Configurar tu nombre",
+                  "Configurar tu numero de teléfono",
+                  "Habilitar o deshabilitar las notificaciones",
+                ]}
+              />
+            </>
+          )}
         </TutorialLayout.CardContainer>
         <TutorialLayout.Contact>
           <Description size="medium">
@@ -73,7 +76,7 @@ const TutorialPage = () => {
               style={{
                 textDecoration: "none",
                 color: "#91C301",
-                marginRight: "4px",                
+                marginRight: "4px",
               }}
             >
               Whatsapp
