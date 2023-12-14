@@ -26,19 +26,19 @@ const valorPorDeporte: ValorPorDeporte = {
     "2 horas": 80,
   },
   "Futbol 5": {
-    "1 hora": 100,
-    "1:30 horas": 150,
-    "2 horas": 200,
+    "1 hora": 80,
+    "1:30 horas": 120,
+    "2 horas": 160,
   },
   "Futbol 7": {
-    "1 hora": 150,
-    "1:30 horas": 225,
-    "2 horas": 300,
+    "1 hora": 75,
+    "1:30 horas": 110,
+    "2 horas": 150,
   },
   "Futbol 11": {
-    "1 hora": 200,
-    "1:30 horas": 300,
-    "2 horas": 400,
+    "1 hora": 70,
+    "1:30 horas": 105,
+    "2 horas": 140,
   },
 };
 
@@ -48,12 +48,11 @@ const Calculator = () => {
   const [canchas, setCanchas] = React.useState("1");
   const [turnos, setTurnos] = React.useState("1");
 
-  // Usar el tipo ValorPorDeporte en la función calcularPrecio
   const calcularPrecio = (deporte: string): number | undefined => {
     const parsedCanchas = parseInt(canchas);
     const parsedTurnos = parseInt(turnos);
 
-    if (parsedCanchas >= 1 && parsedCanchas <= 3) {
+    if (parsedCanchas >= 1 && parsedCanchas <= 3 && parsedTurnos) {
       if (duracion === "1 hora") {
         return valorPorDeporte[deporte]["1 hora"] * parsedTurnos;
       } else if (duracion === "1:30 horas") {
@@ -61,7 +60,7 @@ const Calculator = () => {
       } else if (duracion === "2 horas") {
         return valorPorDeporte[deporte]["2 horas"] * parsedTurnos;
       }
-    } else if (parsedCanchas >= 4 && parsedCanchas <= 6) {
+    } else if (parsedCanchas >= 4 && parsedCanchas <= 6 && parsedTurnos) {
       if (duracion === "1 hora") {
         return valorPorDeporte[deporte]["1 hora"] * parsedTurnos * 0.8;
       } else if (duracion === "1:30 horas") {
@@ -69,7 +68,7 @@ const Calculator = () => {
       } else if (duracion === "2 horas") {
         return valorPorDeporte[deporte]["2 horas"] * parsedTurnos * 0.8;
       }
-    } else if (parsedCanchas >= 7) {
+    } else if (parsedCanchas >= 7 && parsedTurnos) {
       if (duracion === "1 hora") {
         return valorPorDeporte[deporte]["1 hora"] * parsedTurnos * 0.6;
       } else if (duracion === "1:30 horas") {
@@ -83,8 +82,9 @@ const Calculator = () => {
 
   const calcularPrecioXTurno = (deporte: string): number | undefined => {
     const parsedCanchas = parseInt(canchas);
+    const parsedTurnos = parseInt(turnos);
 
-    if (parsedCanchas >= 1 && parsedCanchas <= 3) {
+    if (parsedCanchas >= 1 && parsedCanchas <= 3 && parsedTurnos) {
       if (duracion === "1 hora") {
         return valorPorDeporte[deporte]["1 hora"];
       } else if (duracion === "1:30 horas") {
@@ -92,7 +92,7 @@ const Calculator = () => {
       } else if (duracion === "2 horas") {
         return valorPorDeporte[deporte]["2 horas"];
       }
-    } else if (parsedCanchas >= 4 && parsedCanchas <= 6) {
+    } else if (parsedCanchas >= 4 && parsedCanchas <= 6 && parsedTurnos) {
       if (duracion === "1 hora") {
         return valorPorDeporte[deporte]["1 hora"] * 0.8;
       } else if (duracion === "1:30 horas") {
@@ -100,7 +100,7 @@ const Calculator = () => {
       } else if (duracion === "2 horas") {
         return valorPorDeporte[deporte]["2 horas"] * 0.8;
       }
-    } else if (parsedCanchas >= 7) {
+    } else if (parsedCanchas >= 7 && parsedTurnos) {
       if (duracion === "1 hora") {
         return valorPorDeporte[deporte]["1 hora"] * 0.6;
       } else if (duracion === "1:30 horas") {
@@ -141,11 +141,16 @@ const Calculator = () => {
         ></Input>
       </StyledCalculatorInputContainer>
       <StyledCalculatorPriceContainer>
-        <StyledCalculatorPrice>{`$ ${calcularPrecio(
-          deporte
-        )} / Mes`}</StyledCalculatorPrice>
+        <StyledCalculatorPrice>
+          {
+            // si el precio es 0 no se muestra nada, sino se muestra el precio de eta forma $1000/mes
+            calcularPrecio(deporte) !== 0 &&
+              `$ ${calcularPrecio(deporte)} / mes`
+          }
+        </StyledCalculatorPrice>
         <StyledCalculatorPriceXTurno>
-          {`$ ${calcularPrecioXTurno(deporte)} / Turno`}
+          {calcularPrecioXTurno(deporte) !== 0 &&
+            `$ ${calcularPrecioXTurno(deporte)} / turno`}
         </StyledCalculatorPriceXTurno>
       </StyledCalculatorPriceContainer>
     </StyledCalculator>

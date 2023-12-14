@@ -1,18 +1,16 @@
-import React from "react";
-import ContactSection from "./components/ContactSection/ContactSection";
-import FeaturesSection from "./components/FeaturesSection/FeaturesSection";
-import MainSection from "./components/MainSection/MainSection";
-import PriceSection from "./components/PriceSection/PriceSection";
+import { Route, Routes } from "react-router-dom";
+import { routes } from "./pages/routes";
 
 function App() {
-  return (
-    <>
-      <MainSection></MainSection>
-      <FeaturesSection></FeaturesSection>
-      <PriceSection></PriceSection>
-      <ContactSection></ContactSection>
-    </>
-  );
+  return <div>
+    <Routes>
+      {
+        routes.map((route) => {
+          return <Route path={route.path} element={<route.component />} />;
+        })
+      }
+    </Routes>
+  </div>;
 }
 
 export default App;

@@ -14,6 +14,7 @@ export const StyledPriceSectionText = styled("div", {
   maxWidth: "800px",
   textAlign: "center",
   gap: "24px",
+  padding: "0 24px",
 });
 
 export const StyledPriceSectionCalculatorContainer = styled("div", {

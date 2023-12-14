@@ -9,30 +9,20 @@ import {
   StyledContainerButtonImg,
   StyledContainerDescription,
   StyledContainerImg,
-  StyledContainerLinks,
   StyledDescription,
   StyledFooter,
-  StyledHeader,
   StyledImg,
-  StyledLink,
-  StyledLogo,
   StyledMainSection,
   StyledTitleMain,
   StyledTitleSecondary,
 } from "./MainSection.styles";
+import Header from "../Header/Header";
 
 const MainSection = () => {
   return (
     <StyledMainSection id="main">
       <Container>
-        <StyledHeader>
-          <StyledLogo src="/img/logo-black.svg"></StyledLogo>
-          <StyledContainerLinks>
-            <StyledLink href="#main">Inicio</StyledLink>
-            <StyledLink href="#features">Características</StyledLink>
-            <StyledLink href="#contact">Contacto</StyledLink>
-          </StyledContainerLinks>
-        </StyledHeader>
+        <Header />
         <StyledBody>
           <StyledContainerDescription>
             <StyledTitleMain>
