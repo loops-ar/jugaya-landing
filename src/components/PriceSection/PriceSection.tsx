@@ -30,7 +30,7 @@ const PriceSection = () => {
           window.open("https://forms.gle/7CbXL62LcNQ28v8U9", "_blank")
         }
       >
-        COMENZA LA PRUEBA GRATUITA
+        COMENZAR LA PRUEBA GRATUITA
       </Button>
     </StyledPriceSection>
   );

@@ -16,16 +16,14 @@ const Header = () => {
         <img src="/img/logo-black.svg" alt="logo"></img>
         <StyledContainerLinks>
           <StyledLink onClick={() => navigate("/")}>Inicio</StyledLink>
-          {window.location.pathname === "/" ? (
-            <>
-              <StyledLink href="#features">Características</StyledLink>
-              <StyledLink href="#price">Precios</StyledLink>
-            </>
-          ) : null}
-          <StyledLink onClick={() => navigate("/tutorial")}>
-            Tutorial
+          <StyledLink onClick={() => navigate("/#features")}>
+            Características
           </StyledLink>
-          <StyledLink href="#contact">Contacto</StyledLink>
+          <StyledLink onClick={() => navigate("/#price")}>Precios</StyledLink>
+          <StyledLink onClick={() => navigate("/tutorial")}>
+            Tutoriales
+          </StyledLink>
+          <StyledLink onClick={() => navigate("#contact")}>Contacto</StyledLink>
         </StyledContainerLinks>
       </StyledHeader>
       <StyledSidebarContainer>

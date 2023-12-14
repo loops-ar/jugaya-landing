@@ -15,7 +15,7 @@ const TutorialPage = () => {
           <Header />
         </TutorialLayout.Header>
         <TutorialLayout.Title>
-          <Title>Tutorial</Title>
+          <Title>Tutoriales</Title>
         </TutorialLayout.Title>
         <TutorialLayout.CardContainer>
           <CardTutorial
