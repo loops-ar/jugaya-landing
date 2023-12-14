@@ -1,116 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyledCalculator,
   StyledCalculatorInputContainer,
   StyledCalculatorPrice,
   StyledCalculatorPriceContainer,
+  StyledCalculatorPriceSD,
   StyledCalculatorPriceXTurno,
   StyledCalculatorTitle,
+  StyledCanchasContainer,
+  StyledDiscountMessageLarge,
+  StyledDiscountMessageSmall,
 } from "./Calculator.styles";
 import Select from "../Select/Select";
 import Input from "../Input/Input";
+import {
+  Deporte,
+  calcularPrecioPorMes,
+  calcularPrecioPorTurno,
+  deportesOptions,
+  durationOptions,
+} from "../../utils/calculadora";
 
-// Definir un tipo para el objeto valorPorDeporte
-type ValorPorDeporte = {
-  [deporte: string]: {
-    "1 hora": number;
-    "1:30 horas": number;
-    "2 horas": number;
-  };
-};
-
-const valorPorDeporte: ValorPorDeporte = {
-  Padel: {
-    "1 hora": 40,
-    "1:30 horas": 60,
-    "2 horas": 80,
-  },
-  "Futbol 5": {
-    "1 hora": 80,
-    "1:30 horas": 120,
-    "2 horas": 160,
-  },
-  "Futbol 7": {
-    "1 hora": 75,
-    "1:30 horas": 110,
-    "2 horas": 150,
-  },
-  "Futbol 11": {
-    "1 hora": 70,
-    "1:30 horas": 105,
-    "2 horas": 140,
-  },
-};
+const MIN_CANCHAS = 1;
+const MAX_CANCHAS = 20;
+const MIN_TURNOS = 1;
+const MAX_TURNOS = 50000;
 
 const Calculator = () => {
-  const [deporte, setDeporte] = React.useState("Padel");
-  const [duracion, setDuracion] = React.useState("1 hora");
-  const [canchas, setCanchas] = React.useState("1");
-  const [turnos, setTurnos] = React.useState("1");
+  const [deporte, setDeporte] = useState<Deporte>("padel");
+  const [duracion, setDuracion] = useState<number>(1);
+  const [canchas, setCanchas] = useState("1");
+  const [turnos, setTurnos] = useState("1");
 
-  const calcularPrecio = (deporte: string): number | undefined => {
-    const parsedCanchas = parseInt(canchas);
-    const parsedTurnos = parseInt(turnos);
+  const precioPorTurno =
+    Math.round(
+      calcularPrecioPorTurno(deporte, duracion, parseInt(canchas || "1", 10)) *
+        100
+    ) / 100;
 
-    if (parsedCanchas >= 1 && parsedCanchas <= 3 && parsedTurnos) {
-      if (duracion === "1 hora") {
-        return valorPorDeporte[deporte]["1 hora"] * parsedTurnos;
-      } else if (duracion === "1:30 horas") {
-        return valorPorDeporte[deporte]["1:30 horas"] * parsedTurnos;
-      } else if (duracion === "2 horas") {
-        return valorPorDeporte[deporte]["2 horas"] * parsedTurnos;
-      }
-    } else if (parsedCanchas >= 4 && parsedCanchas <= 6 && parsedTurnos) {
-      if (duracion === "1 hora") {
-        return valorPorDeporte[deporte]["1 hora"] * parsedTurnos * 0.8;
-      } else if (duracion === "1:30 horas") {
-        return valorPorDeporte[deporte]["1:30 horas"] * parsedTurnos * 0.8;
-      } else if (duracion === "2 horas") {
-        return valorPorDeporte[deporte]["2 horas"] * parsedTurnos * 0.8;
-      }
-    } else if (parsedCanchas >= 7 && parsedTurnos) {
-      if (duracion === "1 hora") {
-        return valorPorDeporte[deporte]["1 hora"] * parsedTurnos * 0.6;
-      } else if (duracion === "1:30 horas") {
-        return valorPorDeporte[deporte]["1:30 horas"] * parsedTurnos * 0.6;
-      } else if (duracion === "2 horas") {
-        return valorPorDeporte[deporte]["2 horas"] * parsedTurnos * 0.6;
-      }
-    }
-    return 0;
-  };
+  const precioPorTurnoSD =
+    Math.round(calcularPrecioPorTurno(deporte, duracion, 1) * 100) / 100;
 
-  const calcularPrecioXTurno = (deporte: string): number | undefined => {
-    const parsedCanchas = parseInt(canchas);
-    const parsedTurnos = parseInt(turnos);
+  const precioPorMes = calcularPrecioPorMes(
+    precioPorTurno,
+    parseInt(turnos || "1", 10)
+  );
 
-    if (parsedCanchas >= 1 && parsedCanchas <= 3 && parsedTurnos) {
-      if (duracion === "1 hora") {
-        return valorPorDeporte[deporte]["1 hora"];
-      } else if (duracion === "1:30 horas") {
-        return valorPorDeporte[deporte]["1:30 horas"];
-      } else if (duracion === "2 horas") {
-        return valorPorDeporte[deporte]["2 horas"];
-      }
-    } else if (parsedCanchas >= 4 && parsedCanchas <= 6 && parsedTurnos) {
-      if (duracion === "1 hora") {
-        return valorPorDeporte[deporte]["1 hora"] * 0.8;
-      } else if (duracion === "1:30 horas") {
-        return valorPorDeporte[deporte]["1:30 horas"] * 0.8;
-      } else if (duracion === "2 horas") {
-        return valorPorDeporte[deporte]["2 horas"] * 0.8;
-      }
-    } else if (parsedCanchas >= 7 && parsedTurnos) {
-      if (duracion === "1 hora") {
-        return valorPorDeporte[deporte]["1 hora"] * 0.6;
-      } else if (duracion === "1:30 horas") {
-        return valorPorDeporte[deporte]["1:30 horas"] * 0.6;
-      } else if (duracion === "2 horas") {
-        return valorPorDeporte[deporte]["2 horas"] * 0.6;
-      }
-    }
-    return 0;
-  };
+  const precioPorMesSD = calcularPrecioPorMes(
+    precioPorTurnoSD,
+    parseInt(turnos || "1", 10)
+  );
+
+  const descuento = -((precioPorMes * 100) / precioPorMesSD - 100);
+  const ahorro = precioPorMesSD - precioPorMes;
+
   return (
     <StyledCalculator>
       <StyledCalculatorTitle>Calculadora de precios</StyledCalculatorTitle>
@@ -118,39 +61,83 @@ const Calculator = () => {
         <Select
           name="Deporte"
           label="Deporte"
-          options={["Padel", "Futbol 5", "Futbol 7", "Futbol 11"]}
-          onChange={(event) => setDeporte(event.target.value)}
+          options={deportesOptions}
+          value={deporte}
+          onChange={(event) => {
+            const selectedDeporte = event.target.value as Deporte;
+            setDeporte(selectedDeporte);
+          }}
         ></Select>
         <Select
           name="Duracion"
           label="Duración del turno"
-          options={["1 hora", "1:30 horas", "2 horas"]}
-          onChange={(event) => setDuracion(event.target.value)}
+          options={durationOptions}
+          value={duracion}
+          onChange={(event) => setDuracion(parseFloat(event.target.value))}
         ></Select>
-        <Input
-          name="canchas"
-          value={canchas}
-          onChange={(event) => setCanchas(event.target.value)}
-          label="Cantidad de canchas"
-        ></Input>
+        <StyledCanchasContainer>
+          <Input
+            name="canchas"
+            value={canchas}
+            onChange={(event) => {
+              const canchasStr = event.target.value;
+              if (!canchasStr) {
+                setCanchas("");
+              } else {
+                const canchas = parseInt(canchasStr, 10);
+                if (canchas >= MIN_CANCHAS && canchas <= MAX_CANCHAS) {
+                  setCanchas(canchas.toString());
+                }
+              }
+            }}
+            onBlur={(event) => {
+              if (!event.target.value) {
+                setCanchas("1");
+              }
+            }}
+            label="Cantidad de canchas"
+          ></Input>
+          {ahorro > 0 && (
+            <>
+              <StyledDiscountMessageSmall>
+                Ahorrás ${ahorro}
+              </StyledDiscountMessageSmall>
+              <StyledDiscountMessageLarge>
+                {descuento}% OFF
+              </StyledDiscountMessageLarge>
+            </>
+          )}
+        </StyledCanchasContainer>
         <Input
           name="turnos"
           value={turnos}
-          onChange={(event) => setTurnos(event.target.value)}
+          onChange={(event) => {
+            const turnosStr = event.target.value;
+            if (!turnosStr) {
+              setTurnos("");
+            } else {
+              const turnos = parseInt(turnosStr, 10);
+              if (turnos >= MIN_TURNOS && turnos <= MAX_TURNOS) {
+                setTurnos(turnos.toString());
+              }
+            }
+          }}
+          onBlur={(event) => {
+            if (!event.target.value) {
+              setTurnos("1");
+            }
+          }}
           label="Turnos estimados por mes"
         ></Input>
       </StyledCalculatorInputContainer>
       <StyledCalculatorPriceContainer>
-        <StyledCalculatorPrice>
-          {
-            // si el precio es 0 no se muestra nada, sino se muestra el precio de eta forma $1000/mes
-            calcularPrecio(deporte) !== 0 &&
-              `$ ${calcularPrecio(deporte)} / mes`
-          }
-        </StyledCalculatorPrice>
+        <StyledCalculatorPriceSD>
+          {descuento > 0 && `$ ${precioPorMesSD}/mes`}
+        </StyledCalculatorPriceSD>
+
+        <StyledCalculatorPrice>$ {precioPorMes}/mes</StyledCalculatorPrice>
         <StyledCalculatorPriceXTurno>
-          {calcularPrecioXTurno(deporte) !== 0 &&
-            `$ ${calcularPrecioXTurno(deporte)} / turno`}
+          $ {precioPorTurno}/turno
         </StyledCalculatorPriceXTurno>
       </StyledCalculatorPriceContainer>
     </StyledCalculator>
