@@ -29,41 +29,38 @@ const TutorialPage = () => {
               "Ver estado de las reservas",
             ]}
           />
-          {false && (
-            <>
-              <CardTutorial
-                link="#"
-                title="Crear y modificar turnos"
-                userType="admin"
-                items={[
-                  "Cargar turnos pedidos fuera de la App",
-                  "Crear turnos fijos",
-                  "Eliminar turnos existentes",
-                  "Usar el calendario de turnos",
-                ]}
-              />
-              <CardTutorial
-                link="#"
-                title="Aceptar o rechazar turnos"
-                userType="admin"
-                items={[
-                  "Encontrar los turnos pendientes",
-                  "Aceptar o rechazar turnos",
-                  "Ver datos de contacto los jugadores",
-                ]}
-              />
-              <CardTutorial
-                link="#"
-                title="Modificar tu datos"
-                userType="user"
-                items={[
-                  "Configurar tu nombre",
-                  "Configurar tu numero de teléfono",
-                  "Habilitar o deshabilitar las notificaciones",
-                ]}
-              />
-            </>
-          )}
+
+          <CardTutorial
+            link="https://www.youtube.com/watch?v=IyJLwhSqXhI"
+            title="Crear y modificar turnos"
+            userType="admin"
+            items={[
+              "Cargar turnos pedidos fuera de la App",
+              "Crear turnos fijos",
+              "Eliminar turnos existentes",
+              "Usar el calendario de turnos",
+            ]}
+          />
+          <CardTutorial
+            link="https://www.youtube.com/watch?v=r3Xq8xI0rSM"
+            title="Aceptar o rechazar turnos"
+            userType="admin"
+            items={[
+              "Encontrar los turnos pendientes",
+              "Aceptar o rechazar turnos",
+              "Ver datos de contacto los jugadores",
+            ]}
+          />
+          <CardTutorial
+            link="https://www.youtube.com/watch?v=2pEJSI_0X9E"
+            title="Modificar tu datos"
+            userType="user"
+            items={[
+              "Configurar tu nombre",
+              "Configurar tu numero de teléfono",
+              "Habilitar o deshabilitar las notificaciones",
+            ]}
+          />
         </TutorialLayout.CardContainer>
         <TutorialLayout.Contact>
           <Description size="medium">
