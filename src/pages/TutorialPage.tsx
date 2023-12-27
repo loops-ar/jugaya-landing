@@ -29,7 +29,16 @@ const TutorialPage = () => {
               "Ver estado de las reservas",
             ]}
           />
-
+          <CardTutorial
+            link="https://www.youtube.com/watch?v=2pEJSI_0X9E"
+            title="Modificar tu datos"
+            userType="user"
+            items={[
+              "Configurar tu nombre",
+              "Configurar tu numero de teléfono",
+              "Habilitar o deshabilitar las notificaciones",
+            ]}
+          />
           <CardTutorial
             link="https://www.youtube.com/watch?v=IyJLwhSqXhI"
             title="Crear y modificar turnos"
@@ -52,13 +61,12 @@ const TutorialPage = () => {
             ]}
           />
           <CardTutorial
-            link="https://www.youtube.com/watch?v=2pEJSI_0X9E"
-            title="Modificar tu datos"
-            userType="user"
+            link="https://www.youtube.com/watch?v=MXfyt7R3p-I&ab_channel=JugaYa"
+            title="Facturación y gestión de ventas"
+            userType="admin"
             items={[
-              "Configurar tu nombre",
-              "Configurar tu numero de teléfono",
-              "Habilitar o deshabilitar las notificaciones",
+              "Analizar Estadísticas de Turnos Vendidos",
+              "Realizar Pago de la Aplicación",
             ]}
           />
         </TutorialLayout.CardContainer>
