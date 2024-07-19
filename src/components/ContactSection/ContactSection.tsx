@@ -29,7 +29,7 @@ const ContactSection = () => {
         </StyledContainerContact>
         <StyledSpan>
           Si tenés alguna duda comunicate con nosotros por mail a{" "}
-          <a href="mailto:contacto@jugaya.ar">contacto@jugaya.ar</a>.
+          <a href="mailto:jugaya@loops.ar">jugaya@loops.ar</a>.
         </StyledSpan>
         <StyledContainerContact>
           <StyledImage src="/img/logo-white.svg"></StyledImage>
