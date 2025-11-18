@@ -9,14 +9,12 @@ const multiCanchas: Record<number, number> = {
   6: 0.6,
 };
 
-const ppp = 50;
-
 const precioPorDeporte: Record<Deporte, number> = {
-  padel: 4 * ppp,
-  tenis: 4 * ppp,
-  futbol5: 4 * ppp,
-  futbol7: 4 * ppp,
-  futbol11: 4 * ppp,
+  padel: 200,
+  tenis: 200,
+  futbol5: 200,
+  futbol7: 200,
+  futbol11: 200,
 };
 
 export const calcularPrecioPorTurno = (
@@ -32,7 +30,7 @@ export const calcularPrecioPorTurno = (
       multiCancha = multiCanchas[cant];
     }
   });
-  return baseDeporte * duracion * multiCancha;
+  return baseDeporte * multiCancha;
 };
 
 export const calcularPrecioPorMes = (
