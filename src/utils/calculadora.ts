@@ -9,14 +9,14 @@ const multiCanchas: Record<number, number> = {
   6: 0.6,
 };
 
-const ppp = 50;
+const ppp = 75;
 
 const precioPorDeporte: Record<Deporte, number> = {
   padel: 4 * ppp,
   tenis: 4 * ppp,
-  futbol5: 10 * ppp,
-  futbol7: 14 * ppp,
-  futbol11: 22 * ppp,
+  futbol5: 4 * ppp,
+  futbol7: 4 * ppp,
+  futbol11: 4 * ppp,
 };
 
 export const calcularPrecioPorTurno = (
